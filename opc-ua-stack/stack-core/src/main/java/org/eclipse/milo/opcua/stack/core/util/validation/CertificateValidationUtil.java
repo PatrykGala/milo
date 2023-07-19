@@ -675,7 +675,7 @@ public class CertificateValidationUtil {
                         if (generalName.getTagNo() == GeneralName.uniformResourceIdentifier) {
                             String uri = generalName.getName().toString();
                             if (!Objects.equals(applicationUri, uri)) {
-//                                throw new UaException(StatusCodes.Bad_CertificateUriInvalid);
+                                throw new UaException(StatusCodes.Bad_CertificateUriInvalid);
                             }
                             return;
                         }
