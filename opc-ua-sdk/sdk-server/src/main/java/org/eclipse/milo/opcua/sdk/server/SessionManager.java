@@ -512,7 +512,7 @@ public class SessionManager implements
             if (session == null) {
                 throw new UaException(StatusCodes.Bad_SessionIdInvalid);
             } else {
-//                verifyClientSignature(session, request);
+                verifyClientSignature(session, request);
 
                 SecurityConfiguration securityConfiguration = session.getSecurityConfiguration();
 
@@ -612,7 +612,7 @@ public class SessionManager implements
                 throw new UaException(StatusCodes.Bad_SecurityChecksFailed);
             }
 
-//            verifyClientSignature(session, request);
+            verifyClientSignature(session, request);
 
             UserIdentityToken identityToken = decodeIdentityToken(
                 request.getUserIdentityToken(),
